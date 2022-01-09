@@ -31,8 +31,8 @@ const ImageScreen = () => {
       setSrc(`data:${retrievedImage.contentType};base64,${buffer.toString('base64')}`);
     }
   }, [retrievedImage]);
-
-  let url = `${__dirname}/images/${id}`;
+  console.log(window.location);
+  let url = `${window.location.host}/images/${id}`;
 
   const copyLink = async (event) => {
     await navigator.clipboard.writeText(url);
