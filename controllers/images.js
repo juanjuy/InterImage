@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 imagesRouter.post('/', upload.single('image'), async (req, res) => {
+	console.log(req);
 	let obj = {
 		data: fs.readFileSync(path.join(`${__dirname}/../${req.file.path}`)),
 		contentType: req.file.mimetype
@@ -20,8 +21,7 @@ imagesRouter.post('/', upload.single('image'), async (req, res) => {
 		}
 	});
 });
-// first of all, how do we get the link that we need, and second of all, how do we get that link to properly show the image?
-// i'm thinking that we navigate it back to the frontend page, but how do we pass it the json information?
+
 imagesRouter.get('/:id', async (req, res) => {
 	const image = await Image.findById(req.params.id);
 	if (image) {
