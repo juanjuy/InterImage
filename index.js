@@ -25,7 +25,7 @@ app.use(middleware.requestLogger);
 
 app.use('/', imagesRouter);
 
-app.get('*', (req,res) =>{
+app.get('*', (req,res) => {
 	res.sendFile(path.join(__dirname+'/build/index.html'));
 });
 

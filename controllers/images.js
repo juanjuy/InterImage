@@ -6,7 +6,6 @@ const fs = require('fs');
 const path = require('path');
 
 imagesRouter.post('/api/images', upload.single('image'), async (req, res) => {
-	console.log(req);
 	let obj = {
 		data: fs.readFileSync(path.join(`${__dirname}/../${req.file.path}`)),
 		contentType: req.file.mimetype

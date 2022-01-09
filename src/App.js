@@ -19,5 +19,3 @@ const App = () => {
 }
 
 export default App;
-
-// pretty much done... just need to refactor it to be able to put it on heroku. so need to change all of the relative localhost paths to something else... whatever we used on the takemeto project

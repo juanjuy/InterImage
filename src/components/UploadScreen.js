@@ -62,7 +62,8 @@ const UploadScreen = () => {
   return (
     <main>
       <div className="dnd-opaque">
-        <h1>Upload Your Image</h1>
+        <h1>InterImage</h1>
+        <h3>Upload Your Image</h3>
         <p>File should be JPG, PNG, etc...</p>
       </div>
       <div id="dnd" onDrop={dropHandler} >
