@@ -1,3 +1,5 @@
+Contact me for the Heroku link!
+
 InterImage is a web app that allows you to upload images and provides a unique link to access the image later.
 
 The website's functionality includes:
