@@ -11,6 +11,7 @@ The website's functionality includes:
   - Link can also be copied via clicking a Copy Link button
 
 Technologies used:
+
 Frontend
 - React + React Router
 - HTML/CSS
