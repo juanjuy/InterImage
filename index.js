@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path');
 const imagesRouter = require('./controllers/images');
 
 const middleware = require('./utils/middleware');
@@ -22,7 +23,11 @@ app.use(cors());
 app.use(express.static('build'));
 app.use(middleware.requestLogger);
 
-app.use('/api/images', imagesRouter);
+app.use('/', imagesRouter);
+
+app.get('*', (req,res) =>{
+	res.sendFile(path.join(__dirname+'/build/index.html'));
+});
 
 app.use(middleware.unknownEndpoint);
 

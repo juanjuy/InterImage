@@ -32,7 +32,7 @@ const ImageScreen = () => {
     }
   }, [retrievedImage]);
 
-  let url = `/images/${id}`;
+  let url = `${__dirname}/images/${id}`;
 
   const copyLink = async (event) => {
     await navigator.clipboard.writeText(url);

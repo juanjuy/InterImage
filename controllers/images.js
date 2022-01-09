@@ -5,7 +5,7 @@ const Image = require('../models/image');
 const fs = require('fs');
 const path = require('path');
 
-imagesRouter.post('/', upload.single('image'), async (req, res) => {
+imagesRouter.post('/api/images', upload.single('image'), async (req, res) => {
 	console.log(req);
 	let obj = {
 		data: fs.readFileSync(path.join(`${__dirname}/../${req.file.path}`)),
@@ -22,7 +22,7 @@ imagesRouter.post('/', upload.single('image'), async (req, res) => {
 	});
 });
 
-imagesRouter.get('/:id', async (req, res) => {
+imagesRouter.get('/api/images/:id', async (req, res) => {
 	const image = await Image.findById(req.params.id);
 	if (image) {
 		res.json(image);
