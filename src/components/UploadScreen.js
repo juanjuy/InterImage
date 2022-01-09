@@ -12,7 +12,7 @@ const UploadScreen = () => {
     event.preventDefault();
     let formElement = document.querySelector('#image-form');
     let formData = new FormData(formElement);
-    let submission = await axios.post('http://localhost:8000/images', formData);
+    let submission = await axios.post('/api/images', formData);
     navigate(`/uploaded/${submission.data}`);
   }
 
@@ -29,7 +29,7 @@ const UploadScreen = () => {
     let formElement = document.querySelector('#image-form');
     let formData = new FormData(formElement);
     formData.set('image', droppedFile);
-    let submission = await axios.post('http://localhost:8000/images', formData);
+    let submission = await axios.post('/api/images', formData);
     navigate(`/uploaded/${submission.data}`);
   }
 
@@ -71,7 +71,7 @@ const UploadScreen = () => {
       </div>
       <div className="dnd-opaque">
         <p id="or">Or</p>
-        <form id="image-form" method="post" action="http://localhost:8000/images" encType="multipart/form-data" onSubmit={formSubmit}>
+        <form id="image-form" method="post" action="/api/images" encType="multipart/form-data" onSubmit={formSubmit}>
           <label htmlFor="image-upload">Choose a file</label>
           <input type="file"
             id="image-upload" name="image"

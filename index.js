@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.static('build'));
 app.use(middleware.requestLogger);
 
-app.use('/images', imagesRouter);
+app.use('/api/images', imagesRouter);
 
 app.use(middleware.unknownEndpoint);
 

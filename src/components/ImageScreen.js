@@ -16,7 +16,7 @@ const ImageScreen = () => {
   let { id } = useParams();
 
   const getImage = async () => {
-    let data = await axios.get(`http://localhost:8000/images/${id}`);
+    let data = await axios.get(`/api/images/${id}`);
     setRetrievedImage(data.data);
   }
 
@@ -32,7 +32,7 @@ const ImageScreen = () => {
     }
   }, [retrievedImage]);
 
-  let url = `http://localhost:3001/images/${id}`;
+  let url = `/images/${id}`;
 
   const copyLink = async (event) => {
     await navigator.clipboard.writeText(url);
